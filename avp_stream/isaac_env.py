@@ -228,7 +228,7 @@ if __name__=="__main__":
     import os 
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--ip', type = str, required = True)
+    parser.add_argument('--ip', default= '10.128.239.209', type = str)
     parser.add_argument('--record', action = 'store_true')
     parser.add_argument('--follow', action = 'store_true', help = "The viewpoint follows the users head")
     args = parser.parse_args()
@@ -241,5 +241,4 @@ if __name__=="__main__":
         latest = s.latest
         env.step(np2tensor(latest, env.device)) 
         print(time.time() - t0)
-
 
